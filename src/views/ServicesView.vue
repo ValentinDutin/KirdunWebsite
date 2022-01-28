@@ -30,7 +30,7 @@ export default {
   // margin-right: 20px;
   // margin-bottom: 0;
   margin: auto;
-  padding: 20px;
+  padding: 20px 0;
   // width: 100%;
   width: auto;
   max-width: 1120px;

@@ -87,8 +87,8 @@ export default {
     width: 100%;
     max-width: 1220px;
     // background: rgb(18, 18, 18);
-    // background: #121212;
-    background: #333333;
+    background: #2e312f;
+    // background: #333333;
     color: rgb(255, 255, 255);
 }
 .footer-list{
