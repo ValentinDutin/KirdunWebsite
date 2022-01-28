@@ -26,13 +26,13 @@
             Услуги
             </router-link>
               <ul class="dropdown-content">
-              <li><router-link class="dropdown-item" to="/accounting-services">Бухгалтерские услуги</router-link></li>
-              <li><router-link class="dropdown-item" to="/legal-services">Юридческие услуги</router-link></li>
-              <li><router-link class="dropdown-item" to="/liquidation">Ликвидация</router-link></li>
-              <li><router-link class="dropdown-item" to="/creating-le">Создание юр. лиц</router-link></li>
-              <li><router-link class="dropdown-item" to="/supporting">Сопровождение бизнеса</router-link></li>
-              <li><router-link class="dropdown-item" to="/consultation">Консультация</router-link></li>
-            </ul>
+                <li><router-link class="dropdown-item" to="/services/accounting-services">Бухгалтерские услуги</router-link></li>
+                <li><router-link class="dropdown-item" to="/services/legal-services">Юридческие услуги</router-link></li>
+                <li><router-link class="dropdown-item" to="/services/liquidation">Ликвидация</router-link></li>
+                <li><router-link class="dropdown-item" to="/services/creating-le">Создание юр. лиц</router-link></li>
+                <li><router-link class="dropdown-item" to="/services/supporting">Сопровождение бизнеса</router-link></li>
+                <li><router-link class="dropdown-item" to="/services/consultation">Консультация</router-link></li>
+              </ul>
             </li>
             <li class="nav-item ws-nw">
               <router-link
