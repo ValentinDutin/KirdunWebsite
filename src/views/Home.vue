@@ -1,17 +1,22 @@
 <template>
   <div class="home">
-    <nav-bar/>
+    <app-header/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import NavBar from '../components/NavBar.vue'
+// import NavBar from '../components/NavBar.vue'
+import AppHeader from '../components/AppHeader.vue'
+// import MainView from './MainView.vue'
+// import AppFooter from '../components/Footer.vue'
 
 export default {
-  name: 'Home',
+  name: 'app-home',
   components: {
-    NavBar
+    // NavBar
+    AppHeader
+    // MainView,
+    // AppFooter
   }
 }
 </script>

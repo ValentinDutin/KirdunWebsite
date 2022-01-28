@@ -1,0 +1,213 @@
+<template>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <router-link
+      class="navbar-brand"
+      to="/"
+      >
+      BERNAST.BY
+      </router-link>
+      <div class="nav-items">
+        <div class="item-list">
+          <ul class="navbar-nav">
+            <li class="nav-item ws-nw">
+              <router-link
+              class="nav-link nav-settings"
+            to="/"
+            >
+            Главная
+              </router-link>
+            </li>
+            <li class="nav-item dropdown ws-nw">
+              <router-link
+              class="nav-link dropbtn nav-settings"
+            to="/services"
+            >
+            Услуги
+            </router-link>
+              <ul class="dropdown-content">
+              <li><router-link class="dropdown-item" to="/accounting-services">Бухгалтерские услуги</router-link></li>
+              <li><router-link class="dropdown-item" to="/legal-services">Юридческие услуги</router-link></li>
+              <li><router-link class="dropdown-item" to="/liquidation">Ликвидация</router-link></li>
+              <li><router-link class="dropdown-item" to="/creating-le">Создание юр. лиц</router-link></li>
+              <li><router-link class="dropdown-item" to="/supporting">Сопровождение бизнеса</router-link></li>
+              <li><router-link class="dropdown-item" to="/consultation">Консультация</router-link></li>
+            </ul>
+            </li>
+            <li class="nav-item ws-nw">
+              <router-link
+              class="nav-link nav-settings"
+            to="/about-us"
+            >
+            О нас
+              </router-link>
+            </li>
+            <li class="nav-item ws-nw">
+              <router-link
+              class="nav-link nav-settings"
+            to="/contacts"
+            >
+            Контакты
+              </router-link>
+            </li>
+            <li class="nav-item ws-nw">
+              <router-link
+              class="nav-link nav-settings"
+            to="/blog"
+            >
+            Блог
+              </router-link>
+            </li>
+            <li class="nav-item ws-nw">
+              <router-link
+              class="nav-link nav-settings"
+            to="/review"
+            >
+            Отзывы
+              </router-link>
+            </li>
+        </ul>
+      </div>
+      <!-- <form class="d-flex search-position">
+        <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Поиск">
+        <button class="btn btn-outline-success" type="submit">Найти</button>
+      </form> -->
+      <div class="phone-number">
+        <a href="tel:80291870494">
+          <img src="../assets/icons/phone.png" alt="Позвоните нам!">
+          <strong>
+            +375 29 187 04 94
+          </strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+</template>
+
+<script>
+export default {
+  name: 'AppHeader',
+  props: {}
+}
+</script>
+
+<style scoped lang="scss">
+@import '../assets/layouts/index';
+.navbar{
+  position: sticky;
+  margin-bottom: 30px;
+  background: white;
+  color: #1C2937;
+  z-index: 20;
+}
+.navbar-container{
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1220px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-items{
+  display: flex;
+  transition: .3s ease-in-out;
+  font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    // color: #303030;
+    word-spacing: 2px;
+}
+.navbar-brand{
+  display: block;
+    color: inherit;
+    font-size: 40px;
+    line-height: 1;
+    font-family: 'Varela', sans-serif;
+    font-weight: bold;
+}
+.item-list{
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+}
+.nav-item{
+  display: inline-block;
+  // text-align: -webkit-match-parent;
+}
+.navbar-toggler{
+  border: none;
+}
+.navbar-toggler{
+  &__location{
+    text-align: right;
+  }
+}
+.ws-nw{
+  white-space: nowrap;
+}
+.non-hover{
+  :hover{
+    background: white;
+    background-color: white;
+  }
+}
+.nav-settings{
+  // height:  50px;
+  padding: 1rem 1rem;
+  color: inherit;
+}
+.navbar-nav{
+  display:inline-block;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  :hover{
+    background: rgba(231, 237, 240, .2);
+    // background-color: rgba(152, 162, 167, .1);
+  }
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  list-style: none;
+  background-color: white;
+  padding: 0;
+  width: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10000;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  background: white;
+  z-index: 10000;
+}
+.dropdown-item{
+  float: none;
+  padding: 12px 16px;
+  margin: 0px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  z-index: 10000;
+  :hover {
+    background-color: #ddd;
+  }
+}
+.phone-number{
+  padding-left: 10px;
+  display: flex;
+  img{
+    padding-top: 0;
+    height: 22px;
+    color: inherit;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+    margin: auto;
+    font-size: 20px;
+  }
+}
+</style>

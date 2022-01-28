@@ -1,23 +1,25 @@
 <template>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-  <router-view/>
+<home />
+  <router-view v-slot="{Component}">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" :key="$route.path"></component>
+    </transition>
+  </router-view>
+  <app-footer />
 </template>
 
-<style lang="scss">
+<script>
+import Home from './views/Home.vue'
+import AppFooter from './components/Footer.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'app',
+  components: {
+    Home,
+    AppFooter
   }
 }
+</script>
+
+<style lang="scss">
 </style>
