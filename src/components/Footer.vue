@@ -55,9 +55,10 @@ export default {
     // z-index: 3;
     display: flex;
     flex-direction: column;
+    justify-items: center;
     // -webkit-box-align: center;
-    // align-items: center;
-    // align-self: center;
+    align-items: center;
+    align-self: center;
 }
 .footer-content{
     border-radius: 120px;
@@ -84,6 +85,7 @@ export default {
     margin: 0px;
     height: 800px;
     width: 100%;
+    max-width: 1220px;
     // background: rgb(18, 18, 18);
     // background: #121212;
     background: #333333;

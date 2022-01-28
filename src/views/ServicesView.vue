@@ -1,23 +1,20 @@
 <template>
 <div class="description-container">
-    <div class="snippet">
         <h1 class="title">
-            Список предоставляемых услуг
+            Список предоставляемых нами услуг
         </h1>
-        <ul class="services-list">
-              <li><router-link class="list-item" to="/services/accounting-services">Бухгалтерские услуги</router-link></li>
-              <li><router-link class="list-item" to="/services/legal-services">Юридческие услуги</router-link></li>
-              <li><router-link class="list-item" to="/services/liquidation">Ликвидация</router-link></li>
-              <li><router-link class="list-item" to="/services/creating-le">Создание юр. лиц</router-link></li>
-              <li><router-link class="list-item" to="/services/supporting">Сопровождение бизнеса</router-link></li>
-              <li><router-link class="list-item" to="/services/consultation">Консультация</router-link></li>
-            </ul>
+    <div class="snippet">
+        <service-list />
     </div>
 </div>
 </template>
 
 <script>
+import ServiceList from '../components/ServiceList.vue'
 export default {
+  components: {
+    ServiceList
+  },
   name: 'ServicesView'
 }
 </script>
@@ -27,21 +24,31 @@ export default {
 .description-container{
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  align-items: flex-start;
+  // -webkit-box-pack: start;
+  justify-content: space-between;
+  align-items: center;
   // margin-right: 20px;
   // margin-bottom: 0;
   margin: auto;
-  padding-top: 40px;
-  padding-bottom: 120px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-  max-width: 720px;
+  padding: 20px;
+  // width: 100%;
+  width: auto;
+  max-width: 1120px;
   height: auto;
-  background: white;
-  border-radius: 15px;
+  // background: white;
+  // border-radius: 15px;
+  h1{
+    text-align: center;
+    background: white;
+    padding: 25px 35px;
+    // padding: 25px 0;
+    border-radius: 15px;
+  }
+}
+.snippet{
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
 }
 .title{
     display: flex;
@@ -50,34 +57,12 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
     margin-top: 21px;
-    margin-bottom: 24px;
+    margin-bottom: 44px;
     width: auto;
     color: black;
     font-size: 32px;
     line-height: 38px;
     font-weight: 700;
     text-align: left;
-}
-.services-list{
-    list-style-type: none;
-    margin: 16px 0px;
-    width: auto;
-    font-size: 22px;
-    font-weight: 400;
-    text-align: left;
-    line-height: 28px;
-}
-.list-item{
-  color: black;
-  text-decoration: none;
-}
-.description-text{
-    margin: 16px 0px;
-    width: auto;
-    color: black;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: left;
-    line-height: 28px;
 }
 </style>
