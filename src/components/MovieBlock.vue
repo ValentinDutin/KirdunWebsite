@@ -30,19 +30,13 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     border-radius: 15px;
     background: white;
     height: auto;
     width: 330px;
     margin: auto;
-    transition: 0.15s;
-    // :hover{
-    //   transform: scale(1.02);
-    //   h3{
-    //     transform: none;
-    //   }
-//   }
+    transition: 0.5s;
 }
 .title{
     display: flex;
@@ -51,11 +45,12 @@ export default {
     margin-right: 10px;
     margin-bottom: 0;
     width: auto;
-    color: black;
+    color: inherit;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: 550;
+    color: inherit;
     font-size: 16px;
-    :hover{
-        transform: none;
-    }
+    text-align: start;
 }
 .movie{
     display: flex;
