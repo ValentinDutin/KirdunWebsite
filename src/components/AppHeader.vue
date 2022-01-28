@@ -9,7 +9,7 @@
       </router-link>
       <div class="nav-items">
         <div class="item-list">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ws-nw">
             <li class="nav-item ws-nw">
               <router-link
               class="nav-link nav-settings"
@@ -68,11 +68,7 @@
             </li>
         </ul>
       </div>
-      <!-- <form class="d-flex search-position">
-        <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Поиск">
-        <button class="btn btn-outline-success" type="submit">Найти</button>
-      </form> -->
-      <div class="phone-number">
+      <div class="phone-number ws-nw">
         <a href="tel:80291870494">
           <img src="../assets/icons/phone.png" alt="Позвоните нам!">
           <strong>
@@ -134,7 +130,7 @@ export default {
 }
 .nav-item{
   display: inline-block;
-  // text-align: -webkit-match-parent;
+  text-align: -webkit-match-parent;
 }
 .navbar-toggler{
   border: none;
@@ -209,5 +205,25 @@ export default {
     margin: auto;
     font-size: 20px;
   }
+}
+.phone-number:hover {
+  img{
+    animation: shake 0.8s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 </style>

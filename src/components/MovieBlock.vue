@@ -34,27 +34,28 @@ export default {
     border-radius: 15px;
     background: white;
     height: auto;
-    // width: 330px;
     width: 330px;
     margin: auto;
+    transition: 0.15s;
+    // :hover{
+    //   transform: scale(1.02);
+    //   h3{
+    //     transform: none;
+    //   }
+//   }
 }
 .title{
     display: flex;
-    // flex-direction: row;
-    // -webkit-box-pack: start;
-    // justify-content: flex-start;
-    // align-items: flex-start;
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 10px;
     margin-bottom: 0;
-    // margin-bottom: 24px;
     width: auto;
     color: black;
-    font-size: 18px;
-    // line-height: 38px;
-    // font-weight: 500;
-    // text-align: left;
+    font-size: 16px;
+    :hover{
+        transform: none;
+    }
 }
 .movie{
     display: flex;

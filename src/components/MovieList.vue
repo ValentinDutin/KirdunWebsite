@@ -60,11 +60,17 @@ export default {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  :hover{
+        transform: scale(1.02);
+    }
   :last-child{
       padding-bottom: 0;
     }
   li{
     padding-bottom: 10px;
+    :hover{
+        transform: none;
+    }
   }
 }
 </style>

@@ -85,7 +85,8 @@ export default {
     height: 800px;
     width: 100%;
     // background: rgb(18, 18, 18);
-    background: #121212;
+    // background: #121212;
+    background: #333333;
     color: rgb(255, 255, 255);
 }
 .footer-list{
@@ -106,6 +107,9 @@ export default {
         display: block;
         text-align: left;
     }
+    :hover{
+        color: #cccccc;
+    }
 }
 .google-maps{
     width: 60%;
@@ -113,7 +117,6 @@ export default {
     // margin-top: 100px;
     height: 600px;
     border-radius: 60px;
-    background: green;
 }
 .bottom-footer{
     display: flex;
