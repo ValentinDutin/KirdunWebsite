@@ -52,11 +52,9 @@ export default {
 .footer{
     padding-top: 40px;
     position: relative;
-    // z-index: 3;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    // -webkit-box-align: center;
     align-items: center;
     align-self: center;
 }
@@ -64,16 +62,6 @@ export default {
     border-radius: 120px;
     display: flex;
     // position: relative;
-    div{
-        display: flex;
-        justify-content: space-between;
-        // justify-content: right;
-        padding: 100px;
-        // margin: auto;
-        align-items: center;
-        width: 100%;
-        max-width: 1220px;
-    }
     justify-content: center;
     box-sizing: border-box;
     align-items: center;
@@ -86,10 +74,19 @@ export default {
     height: 800px;
     width: 100%;
     max-width: 1220px;
-    // background: rgb(18, 18, 18);
     background: #2e312f;
     // background: #333333;
     color: rgb(255, 255, 255);
+    div{
+        display: flex;
+        justify-content: space-between;
+        // justify-content: right;
+        padding: 100px;
+        // margin: auto;
+        align-items: center;
+        width: 100%;
+        max-width: 1220px;
+    }
 }
 .footer-list{
     // padding: 100px;
@@ -128,12 +125,32 @@ export default {
     -webkit-box-pack: center;
     justify-content: center;
     height: 80px;
-    width: 100%;
+    width: 100vw;
     p{
     font-weight: 500;
     font-size: 14px;
     color: black;
     font-family: BasierSquare,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     }
+}
+
+@media screen and (max-width: 450px) {
+  .footer-content{
+      height: auto;
+      border-radius: 60px;
+      div{
+    flex-direction: column;
+    padding: 0;
+    }
+  }
+  .footer-list{
+      padding: 0;
+      margin-top: 16px;
+  }
+  .google-maps{
+    width: 100vw;
+    height: 80vh;
+    border-radius: 20px;
+  }
 }
 </style>

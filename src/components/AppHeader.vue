@@ -163,6 +163,9 @@ export default {
     background: rgba(231, 237, 240, .2);
     // background-color: rgba(152, 162, 167, .1);
   }
+  // @include respond-to(handhelds) { display: none ;}
+  // @include respond-to(medium-screens) { width: 125px; }
+  //@include respond-to(wide-screens) { float: none; }
 }
 .dropdown-content{
   display: none;
@@ -210,6 +213,12 @@ export default {
   img{
     animation: shake 0.8s;
     animation-iteration-count: infinite;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navbar-nav{
+    display:none;
   }
 }
 
