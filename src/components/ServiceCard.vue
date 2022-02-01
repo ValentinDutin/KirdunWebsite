@@ -65,4 +65,9 @@ export default {
         padding-bottom: 10px;
     }
 }
+@media (max-width: 750px) {
+  .service-card{
+    margin: 20px 0 0 0;
+  }
+}
 </style>

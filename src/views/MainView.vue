@@ -18,7 +18,7 @@
       jfsghgh ddhhjkhhgg jjgdhgsdjghjf"
       />
     </div>
-    <movie-list/>
+    <movie-list v-show="!mobile"/>
   </div>
 </template>
 
@@ -30,7 +30,26 @@ export default {
     TextSnippet,
     MovieList
   },
-  name: 'main-view'
+  name: 'main-view',
+  data () {
+    return {
+      mobile: null,
+      windowWidth: null
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.cheeckScreen())
+  },
+  methods: {
+    cheeckScreen () {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth <= 750) {
+        this.mobile = true
+      } else {
+        this.mobile = false
+      }
+    }
+  }
 }
 </script>
 
@@ -59,5 +78,9 @@ export default {
   background: white;
   border-radius: 15px;
 }
-
+@media (max-width: 750px) {
+  .description-container {
+    margin-right: 0;
+  }
+}
 </style>

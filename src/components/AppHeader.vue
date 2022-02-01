@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="navbar-container">
       <router-link
       class="navbar-brand"
@@ -8,18 +8,7 @@
       BERNAST.BY
       </router-link>
       <div class="nav-items">
-        <button
-          class="navbar-toggler navbar-toggler__location"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="item-list" id="navbarSupportedContent">
+        <div class="item-list">
           <ul class="navbar-nav ws-nw">
             <li class="nav-item ws-nw">
               <router-link
@@ -89,7 +78,9 @@
       </div>
     </div>
   </div>
-</nav>
+  </nav>
+  <div class="margin-container">
+  </div>
 </template>
 
 <script>
@@ -101,12 +92,27 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/layouts/index';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .navbar{
-  position: sticky;
-  margin-bottom: 30px;
+  // position: relative;
+  position: fixed;
+  display: flex;
+  top: 0;
+  width: 100%;
+  // margin-bottom: 30px;
   background: white;
   color: #1C2937;
   z-index: 20;
+}
+.margin-container{
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
 }
 .navbar-container{
   margin: 0 auto;
@@ -122,7 +128,6 @@ export default {
   font-family: "Trebuchet MS", sans-serif;
     font-size: 18px;
     line-height: 1.5;
-    // color: #303030;
     word-spacing: 2px;
 }
 .navbar-brand{
@@ -227,11 +232,11 @@ export default {
   }
 }
 
-// @media screen and (max-width: 450px) {
-//   .navbar-nav{
-//     display:none;
-//   }
-// }
+@media (max-width: 750px) {
+  .navbar-nav{
+    display:none;
+  }
+}
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }

@@ -125,7 +125,7 @@ export default {
     -webkit-box-pack: center;
     justify-content: center;
     height: 80px;
-    width: 100vw;
+    // width: 100vw;
     p{
     font-weight: 500;
     font-size: 14px;

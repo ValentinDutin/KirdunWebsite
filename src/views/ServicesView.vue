@@ -37,13 +37,13 @@ export default {
   height: auto;
   // background: white;
   // border-radius: 15px;
-  h1{
-    text-align: center;
-    background: white;
-    padding: 25px 35px;
-    // padding: 25px 0;
-    border-radius: 15px;
-  }
+  // h1{
+  //   text-align: center;
+  //   background: white;
+  //   padding: 25px 35px;
+  //   // padding: 25px 0;
+  //   border-radius: 15px;
+  // }
 }
 .snippet{
   display: flex;
@@ -64,5 +64,10 @@ export default {
     line-height: 38px;
     font-weight: 700;
     text-align: left;
+    text-align: center;
+    background: white;
+    padding: 25px 35px;
+    // padding: 25px 0;
+    border-radius: 15px;
 }
 </style>
