@@ -8,7 +8,18 @@
       BERNAST.BY
       </router-link>
       <div class="nav-items">
-        <div class="item-list">
+        <button
+          class="navbar-toggler navbar-toggler__location"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="item-list" id="navbarSupportedContent">
           <ul class="navbar-nav ws-nw">
             <li class="nav-item ws-nw">
               <router-link
@@ -216,11 +227,11 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
-  .navbar-nav{
-    display:none;
-  }
-}
+// @media screen and (max-width: 450px) {
+//   .navbar-nav{
+//     display:none;
+//   }
+// }
 
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }

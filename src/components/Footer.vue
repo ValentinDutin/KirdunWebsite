@@ -137,15 +137,21 @@ export default {
 @media screen and (max-width: 450px) {
   .footer-content{
       height: auto;
-      border-radius: 60px;
+      border-radius: 39px;
+      padding-top: 20px;
       div{
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 0;
     }
   }
   .footer-list{
       padding: 0;
       margin-top: 16px;
+  }
+  .list-item{
+    a{
+        text-align: center;
+    }
   }
   .google-maps{
     width: 100vw;
