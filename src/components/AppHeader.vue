@@ -78,12 +78,13 @@
           <transition name="mobile-transition">
             <ul v-show="mobileNav" class="dropdown-mobile-nav">
             <li>
-              <router-link class="mobile-nav-item" to="/">
+              <router-link @click="closeMobileNav"
+                class="mobile-nav-item" to="/">
                 Главная
               </router-link>
             </li>
             <li>
-              <router-link
+              <router-link @click="closeMobileNav"
                 class="mobile-nav-item"
                 to="/services"
               >
@@ -91,7 +92,7 @@
               </router-link>
             </li>
             <li>
-              <router-link
+              <router-link @click="closeMobileNav"
                 class="mobile-nav-item"
                 to="/about-us"
               >
@@ -99,7 +100,7 @@
               </router-link>
             </li>
             <li>
-              <router-link
+              <router-link @click="closeMobileNav"
                 class="mobile-nav-item"
                 to="/contacts"
               >
@@ -107,7 +108,7 @@
               </router-link>
             </li>
             <li>
-              <router-link
+              <router-link @click="closeMobileNav"
                 class="mobile-nav-item"
                 to="/blog"
               >
@@ -115,7 +116,7 @@
               </router-link>
             </li>
             <li>
-              <router-link
+              <router-link @click="closeMobileNav"
                 class="mobile-nav-item"
                 to="/review"
               >
@@ -170,6 +171,9 @@ export default {
     window.addEventListener('scroll', this.updateScroll)
   },
   methods: {
+    closeMobileNav () {
+      this.mobileNav = false
+    },
     updateScroll () {
       const scrollPosition = window.scrollY
       if (scrollPosition > 50) {
@@ -339,15 +343,13 @@ export default {
 }
 .mobile-nav-item {
   text-decoration: none;
-  font-family: "Trebuchet MS", sans-serif;
   font-size: 30px;
-  line-height: 1.5;
-  word-spacing: 2px;
-  padding-bottom: 15px;
   color: $primary;
   transition: 0.5s ease all;
+  padding: 5px 120px 5px 5px;
 }
 .dropdown-mobile-nav{
+  box-shadow: 7px 0 4px #f8f9fb;
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -355,17 +357,17 @@ export default {
   // transition: 0.5s ease all;
   position: fixed;
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
   height: 100%;
   background: white;
   top: 0;
   left: 0;
   :last-child{
-    padding-left: 5px;
+    padding-left: 15px;
   }
   li{
     margin-left: 0;
-    padding: 10px 50px;
+    padding: 10px 30px;
   }
   li:hover{
     background: rgba(231, 237, 240, .2);
@@ -377,7 +379,7 @@ export default {
 }
 .mobile-transition-enter-from,
 .mobile-transition-leave-to {
-  transform: translateX(-250px);
+  transform: translateX(-307px);
 }
 .mobile-transition-enter-to {
   transform: translateX(0);
