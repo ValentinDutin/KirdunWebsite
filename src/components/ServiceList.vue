@@ -22,7 +22,6 @@ export default {
       serviceList: [
         {
           imgPath: 'accounting-services-1',
-          // imgPath: '../assets/icons/accounting-services.png',
           routePath: '/services/accounting-services',
           name: 'Бухгалтерские услуги'
         },
@@ -62,10 +61,7 @@ export default {
 
 .service-list{
   list-style-type: none;
-  // display: flex;
-  // justify-content: start;
-  // align-content: space-between;
-  // flex-direction: row;
+
   display: flex;
   flex-wrap: wrap;
   align-content: center;

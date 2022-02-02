@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" id="navbar">
+  <nav class="navbar" :class="{'scrolledNav': scrolledNav}">
     <div class="navbar-container">
       <router-link
       class="navbar-brand"
@@ -9,22 +9,22 @@
       </router-link>
       <div class="nav-items">
         <div class="item-list">
-          <ul class="navbar-nav ws-nw">
+          <ul v-show="!mobile" class="navbar-nav ws-nw">
             <li class="nav-item ws-nw">
               <router-link
-              class="nav-link nav-settings"
-            to="/"
-            >
-            Главная
+                class="nav-link nav-settings"
+                to="/"
+              >
+                Главная
               </router-link>
             </li>
             <li class="nav-item dropdown ws-nw">
               <router-link
-              class="nav-link dropbtn nav-settings"
-            to="/services"
-            >
-            Услуги
-            </router-link>
+                class="nav-link dropbtn nav-settings"
+                to="/services"
+              >
+                Услуги
+              </router-link>
               <ul class="dropdown-content">
                 <li><router-link class="dropdown-item" to="/services/accounting-services">Бухгалтерские услуги</router-link></li>
                 <li><router-link class="dropdown-item" to="/services/legal-services">Юридческие услуги</router-link></li>
@@ -36,39 +36,106 @@
             </li>
             <li class="nav-item ws-nw">
               <router-link
-              class="nav-link nav-settings"
-            to="/about-us"
-            >
-            О нас
+                class="nav-link nav-settings"
+                to="/about-us"
+              >
+                О нас
               </router-link>
             </li>
             <li class="nav-item ws-nw">
               <router-link
-              class="nav-link nav-settings"
-            to="/contacts"
-            >
-            Контакты
+                class="nav-link nav-settings"
+                to="/contacts"
+              >
+                Контакты
               </router-link>
             </li>
             <li class="nav-item ws-nw">
               <router-link
-              class="nav-link nav-settings"
-            to="/blog"
-            >
-            Блог
+                class="nav-link nav-settings"
+                to="/blog"
+              >
+                Блог
               </router-link>
             </li>
             <li class="nav-item ws-nw">
               <router-link
-              class="nav-link nav-settings"
-            to="/review"
-            >
-            Отзывы
+                class="nav-link nav-settings"
+                to="/review"
+              >
+                Отзывы
               </router-link>
             </li>
-        </ul>
-      </div>
-      <div class="phone-number ws-nw">
+          </ul>
+          <div class="toggle-btn">
+            <fa
+              icon="bars"
+              @click="toggleMobileNav"
+              v-show="mobile"
+              :class="{'toggle-btn-active': mobileNav}"
+            />
+          </div>
+          <transition name="mobile-transition">
+            <ul v-show="mobileNav" class="dropdown-mobile-nav">
+            <li>
+              <router-link class="mobile-nav-item" to="/">
+                Главная
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="mobile-nav-item"
+                to="/services"
+              >
+                Услуги
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="mobile-nav-item"
+                to="/about-us"
+              >
+                О нас
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="mobile-nav-item"
+                to="/contacts"
+              >
+                Контакты
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="mobile-nav-item"
+                to="/blog"
+              >
+                Блог
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                class="mobile-nav-item"
+                to="/review"
+              >
+                Отзывы
+              </router-link>
+            </li>
+            <li>
+              <div class="phone-number ws-nw">
+                <a href="tel:80291870494">
+                  <img src="../assets/icons/phone.png" alt="Позвоните нам!">
+                  <strong>
+                    +375 29 187 04 94
+                  </strong>
+                </a>
+              </div>
+            </li>
+          </ul>
+          </transition>
+        </div>
+      <div v-show="!mobile" class="phone-number ws-nw">
         <a href="tel:80291870494">
           <img src="../assets/icons/phone.png" alt="Позвоните нам!">
           <strong>
@@ -86,7 +153,44 @@
 <script>
 export default {
   name: 'AppHeader',
-  props: {}
+  props: {},
+  data () {
+    return {
+      scrolledNav: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.cheeckScreen)
+    this.cheeckScreen()
+  },
+  mounted () {
+    window.addEventListener('scroll', this.updateScroll)
+  },
+  methods: {
+    updateScroll () {
+      const scrollPosition = window.scrollY
+      if (scrollPosition > 50) {
+        this.scrolledNav = true
+      } else {
+        this.scrolledNav = false
+      }
+    },
+    toggleMobileNav () {
+      this.mobileNav = !this.mobileNav
+    },
+    cheeckScreen () {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth <= 750) {
+        this.mobile = true
+      } else {
+        this.mobile = false
+        this.mobileNav = false
+      }
+    }
+  }
 }
 </script>
 
@@ -100,19 +204,21 @@ export default {
   top: 0;
   width: 100%;
   // margin-bottom: 30px;
+  transition: 0.2s ease all;
   background: white;
   color: #1C2937;
   z-index: 20;
+  box-shadow: 0 2px 1px #f8f9fb;
+}
+.scrolledNav {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .margin-container{
   position: relative;
   top: 0;
   width: 100%;
   margin-bottom: 100px;
-}
-.sticky {
-  position: fixed;
-  top: 0;
 }
 .navbar-container{
   margin: 0 auto;
@@ -121,10 +227,11 @@ export default {
   max-width: 1220px;
   display: flex;
   justify-content: space-between;
+  transition: 0.5s ease all;
 }
 .nav-items{
   display: flex;
-  transition: .3s ease-in-out;
+  // transition: .3s ease-in-out;
   font-family: "Trebuchet MS", sans-serif;
     font-size: 18px;
     line-height: 1.5;
@@ -140,6 +247,7 @@ export default {
 }
 .item-list{
       display: block;
+      position: relative;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -148,25 +256,11 @@ export default {
   display: inline-block;
   text-align: -webkit-match-parent;
 }
-.navbar-toggler{
-  border: none;
-}
-.navbar-toggler{
-  &__location{
-    text-align: right;
-  }
-}
+
 .ws-nw{
   white-space: nowrap;
 }
-.non-hover{
-  :hover{
-    background: white;
-    background-color: white;
-  }
-}
 .nav-settings{
-  // height:  50px;
   padding: 1rem 1rem;
   color: inherit;
 }
@@ -177,11 +271,7 @@ export default {
   margin-left: auto;
   :hover{
     background: rgba(231, 237, 240, .2);
-    // background-color: rgba(152, 162, 167, .1);
   }
-  // @include respond-to(handhelds) { display: none ;}
-  // @include respond-to(medium-screens) { width: 125px; }
-  //@include respond-to(wide-screens) { float: none; }
 }
 .dropdown-content{
   display: none;
@@ -230,6 +320,67 @@ export default {
     animation: shake 0.8s;
     animation-iteration-count: infinite;
   }
+}
+.toggle-btn {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 0px;
+  right: 24px;
+  height: 100%;
+  svg{
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.5s ease all;
+  }
+}
+.toggle-btn-active {
+  transform: rotate(180deg);
+}
+.mobile-nav-item {
+  text-decoration: none;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  line-height: 1.5;
+  word-spacing: 2px;
+  padding-bottom: 15px;
+  color: $primary;
+  transition: 0.5s ease all;
+}
+.dropdown-mobile-nav{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  // transition: 0.5s ease all;
+  position: fixed;
+  width: 100%;
+  max-width: 250px;
+  height: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  :last-child{
+    padding-left: 5px;
+  }
+  li{
+    margin-left: 0;
+    padding: 10px 50px;
+  }
+  li:hover{
+    background: rgba(231, 237, 240, .2);
+  }
+}
+.mobile-transition-enter-active,
+.mobile-transition-leave-active {
+  transition: 0.5s ease all;
+}
+.mobile-transition-enter-from,
+.mobile-transition-leave-to {
+  transform: translateX(-250px);
+}
+.mobile-transition-enter-to {
+  transform: translateX(0);
 }
 
 @media (max-width: 750px) {

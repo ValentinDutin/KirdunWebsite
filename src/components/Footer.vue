@@ -134,7 +134,7 @@ export default {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 750px) {
   .footer-content{
       height: auto;
       border-radius: 39px;
