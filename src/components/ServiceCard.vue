@@ -24,8 +24,8 @@ export default {
     },
     imgPath: {
       type: String,
-      required: true
-    //   default: 'https://bipbap.ru/wp-content/uploads/2020/03/skvishi-16-800x800-1-640x640.jpg'
+      required: true,
+      default: 'https://bipbap.ru/wp-content/uploads/2020/03/skvishi-16-800x800-1-640x640.jpg'
     }
   },
   computed: {
@@ -63,9 +63,4 @@ export default {
         padding-bottom: 10px;
     }
 }
-// @media (max-width: 700px) {
-//   .service-card{
-//     margin: 20px 0 0 0;
-//   }
-// }
 </style>

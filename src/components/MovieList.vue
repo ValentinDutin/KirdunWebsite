@@ -67,6 +67,7 @@ export default {
       padding-bottom: 0;
     }
   li{
+    transition: 0.1s ease all;
     padding-bottom: 10px;
     :hover{
         transform: none;
