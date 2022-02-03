@@ -112,8 +112,6 @@ export default {
 }
 .google-maps{
     width: 60%;
-    // margin-right: 100px;
-    // margin-top: 100px;
     height: 600px;
     border-radius: 60px;
 }
@@ -154,7 +152,7 @@ export default {
     }
   }
   .google-maps{
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     border-radius: 20px;
   }

@@ -55,7 +55,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../assets/layouts/index';
-
 .movie-list{
   list-style-type: none;
   padding: 0;

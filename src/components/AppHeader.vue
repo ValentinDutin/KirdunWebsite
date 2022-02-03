@@ -20,7 +20,7 @@
             </li>
             <li class="nav-item dropdown ws-nw">
               <router-link
-                class="nav-link dropbtn nav-settings"
+                class="nav-link nav-settings"
                 to="/services"
               >
                 Услуги
@@ -61,9 +61,9 @@
             <li class="nav-item ws-nw">
               <router-link
                 class="nav-link nav-settings"
-                to="/review"
+                to="/price"
               >
-                Отзывы
+                Стоимость
               </router-link>
             </li>
           </ul>
@@ -77,63 +77,26 @@
           </div>
           <transition name="mobile-transition">
             <ul v-show="mobileNav" class="dropdown-mobile-nav">
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item" to="/">
-                Главная
-              </router-link>
-            </li>
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item"
-                to="/services"
-              >
-                Услуги
-              </router-link>
-            </li>
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item"
-                to="/about-us"
-              >
-                О нас
-              </router-link>
-            </li>
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item"
-                to="/contacts"
-              >
-                Контакты
-              </router-link>
-            </li>
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item"
-                to="/blog"
-              >
-                Блог
-              </router-link>
-            </li>
-            <li>
-              <router-link @click="closeMobileNav"
-                class="mobile-nav-item"
-                to="/review"
-              >
-                Отзывы
-              </router-link>
-            </li>
-            <li>
-              <div class="phone-number ws-nw">
-                <a href="tel:80291870494">
-                  <img src="../assets/icons/phone.png" alt="Позвоните нам!">
-                  <strong>
-                    +375 29 187 04 94
-                  </strong>
-                </a>
-              </div>
-            </li>
-          </ul>
+              <li v-for="(item, index) in mobileNavList" :key="index">
+                <router-link
+                  @click="closeMobileNav"
+                  class="mobile-nav-item"
+                  :to="item.routePath"
+                >
+                {{item.name}}
+                </router-link>
+              </li>
+              <li>
+                <div class="phone-number ws-nw">
+                  <a href="tel:80291870494">
+                    <img src="../assets/icons/phone.png" alt="Позвоните нам!">
+                    <strong>
+                      +375 29 187 04 94
+                    </strong>
+                  </a>
+                </div>
+              </li>
+            </ul>
           </transition>
         </div>
       <div v-show="!mobile" class="phone-number ws-nw">
@@ -160,7 +123,33 @@ export default {
       scrolledNav: null,
       mobile: null,
       mobileNav: null,
-      windowWidth: null
+      windowWidth: null,
+      mobileNavList: [
+        {
+          name: 'Главная',
+          routePath: '/'
+        },
+        {
+          name: 'Услуги',
+          routePath: '/services'
+        },
+        {
+          name: 'О нас',
+          routePath: '/about-us'
+        },
+        {
+          name: 'Контакты',
+          routePath: '/contacts'
+        },
+        {
+          name: 'Блог',
+          routePath: '/blog'
+        },
+        {
+          name: 'Стоимость',
+          routePath: '/price'
+        }
+      ]
     }
   },
   created () {
@@ -187,7 +176,7 @@ export default {
     },
     cheeckScreen () {
       this.windowWidth = window.innerWidth
-      if (this.windowWidth <= 1095) {
+      if (this.windowWidth <= 1105) {
         this.mobile = true
       } else {
         this.mobile = false
@@ -354,7 +343,6 @@ export default {
   padding: 0;
   display: flex;
   flex-direction: column;
-  // transition: 0.5s ease all;
   position: fixed;
   width: 100%;
   max-width: 300px;
@@ -385,7 +373,17 @@ export default {
 .mobile-transition-enter-to {
   transform: translateX(0);
 }
-
+// .dropdown-transition-enter-active,
+// .dropdown-transition-leave-active {
+//   transition: 0.5s ease all;
+// }
+// .dropdown-transition-enter-from,
+// .dropdown-transition-leave-to {
+//   transform: translateY(-307px);
+// }
+// .dropdown-transition-enter-to {
+//   transform: translateY(0);
+// }
 @media (max-width: 750px) {
   .navbar-nav{
     display:none;
