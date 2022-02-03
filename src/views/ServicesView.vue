@@ -23,27 +23,15 @@ export default {
 @import '../assets/layouts/index';
 .description-container{
   display: flex;
+  overflow: hidden;
   flex-direction: column;
-  // -webkit-box-pack: start;
   justify-content: space-between;
   align-items: center;
-  // margin-right: 20px;
-  // margin-bottom: 0;
   margin: auto;
   padding: 20px 0;
-  // width: 100%;
   width: auto;
   max-width: 1120px;
   height: auto;
-  // background: white;
-  // border-radius: 15px;
-  // h1{
-  //   text-align: center;
-  //   background: white;
-  //   padding: 25px 35px;
-  //   // padding: 25px 0;
-  //   border-radius: 15px;
-  // }
 }
 .snippet{
   display: flex;
@@ -63,11 +51,16 @@ export default {
     font-size: 32px;
     line-height: 38px;
     font-weight: 700;
-    text-align: left;
+    // text-align: left;
     text-align: center;
     background: white;
     padding: 25px 35px;
-    // padding: 25px 0;
     border-radius: 15px;
+}
+@media (max-width: 716px){
+  .title {
+    width: 330px;
+    padding: 25px 0;
+  }
 }
 </style>

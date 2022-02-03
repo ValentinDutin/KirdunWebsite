@@ -187,7 +187,7 @@ export default {
     },
     cheeckScreen () {
       this.windowWidth = window.innerWidth
-      if (this.windowWidth <= 750) {
+      if (this.windowWidth <= 1095) {
         this.mobile = true
       } else {
         this.mobile = false
@@ -362,6 +362,7 @@ export default {
   background: white;
   top: 0;
   left: 0;
+  z-index: 1000000;
   :last-child{
     padding-left: 15px;
   }

@@ -42,10 +42,8 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 20px 0 0 20px;
-    // margin-bottom: 0;
-    // margin-right: 0;
-    // align-items: center;
+    margin: 0;
+    // margin: 20px 0 0 20px;
     border-radius: 15px;
     background: white;
     height: 200px;
@@ -65,9 +63,9 @@ export default {
         padding-bottom: 10px;
     }
 }
-@media (max-width: 750px) {
-  .service-card{
-    margin: 20px 0 0 0;
-  }
-}
+// @media (max-width: 700px) {
+//   .service-card{
+//     margin: 20px 0 0 0;
+//   }
+// }
 </style>

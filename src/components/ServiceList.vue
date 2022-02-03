@@ -61,13 +61,13 @@ export default {
 
 .service-list{
   list-style-type: none;
-
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  margin: -20px -20px;
+  // margin: 0;
   :hover{
         transform: scale(1.02);
     }
@@ -75,6 +75,8 @@ export default {
   //     padding-bottom: 0;
   //   }
   li{
+    margin: 20px;
+    transition: 0.1s ease all;
     //padding-bottom: 10px;
     :hover{
         transform: none;
