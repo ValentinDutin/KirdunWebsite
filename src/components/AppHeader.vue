@@ -75,6 +75,7 @@
               :class="{'toggle-btn-active': mobileNav}"
             />
           </div>
+          <div v-show="mobileNav" @click="closeMobileNav" class="mobile-nav-shadow"></div>
           <transition name="mobile-transition">
             <ul v-show="mobileNav" class="dropdown-mobile-nav">
               <li v-for="(item, index) in mobileNavList" :key="index">
@@ -87,7 +88,7 @@
                 </router-link>
               </li>
               <li>
-                <div class="phone-number ws-nw">
+                <div class="phone-number mobile-nav-phone-number">
                   <a href="tel:80291870494">
                     <img src="../assets/icons/phone.png" alt="Позвоните нам!">
                     <strong>
@@ -321,6 +322,7 @@ export default {
   top: 0px;
   right: 24px;
   height: 100%;
+  z-index: 100;
   svg{
     cursor: pointer;
     font-size: 24px;
@@ -337,8 +339,16 @@ export default {
   transition: 0.5s ease all;
   padding: 5px 120px 5px 5px;
 }
+.mobile-nav-shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(211, 202, 202, 0.2);
+  backdrop-filter: blur(5px);
+}
 .dropdown-mobile-nav{
-  box-shadow: 7px 0 4px #f8f9fb;
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -351,9 +361,6 @@ export default {
   top: 0;
   left: 0;
   z-index: 1000000;
-  :last-child{
-    padding-left: 15px;
-  }
   li{
     margin-left: 0;
     padding: 10px 30px;
@@ -362,6 +369,11 @@ export default {
     background: rgba(231, 237, 240, .2);
   }
 }
+.mobile-nav-phone-number{
+    a{
+      margin: 0;
+    }
+  }
 .mobile-transition-enter-active,
 .mobile-transition-leave-active {
   transition: 0.5s ease all;
@@ -373,20 +385,17 @@ export default {
 .mobile-transition-enter-to {
   transform: translateX(0);
 }
-// .dropdown-transition-enter-active,
-// .dropdown-transition-leave-active {
-//   transition: 0.5s ease all;
-// }
-// .dropdown-transition-enter-from,
-// .dropdown-transition-leave-to {
-//   transform: translateY(-307px);
-// }
-// .dropdown-transition-enter-to {
-//   transform: translateY(0);
-// }
-@media (max-width: 750px) {
-  .navbar-nav{
-    display:none;
+@media (max-height: 460px) {
+  .mobile-nav-item {
+  font-size: 20px;
+  }
+  .phone-number{
+    img{
+      height: 18px;
+    }
+    a{
+      font-size: 16px;
+    }
   }
 }
 

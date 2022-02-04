@@ -38,7 +38,8 @@ export default {
     }
   },
   created () {
-    window.addEventListener('resize', this.cheeckScreen())
+    window.addEventListener('resize', this.cheeckScreen)
+    this.cheeckScreen()
   },
   methods: {
     cheeckScreen () {
