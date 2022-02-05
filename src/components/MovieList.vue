@@ -56,7 +56,9 @@ export default {
 <style scoped lang="scss">
 @import '../assets/layouts/index';
 .movie-list{
+  // display: flex;
   list-style-type: none;
+  // flex-wrap: wrap;
   padding: 0;
   margin: 0;
   :hover{
