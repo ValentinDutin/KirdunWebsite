@@ -1,7 +1,7 @@
 <template>
 <div class="description-container">
         <h1 class="title">
-            Здесь отображается наш блог о самом интересном
+            Блог
         </h1>
     <div class="snippet">
         <movie-list />
@@ -43,7 +43,7 @@ export default {
     display: flex;
     flex-direction: row;
     -webkit-box-pack: start;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     margin-top: 21px;
     margin-bottom: 44px;
