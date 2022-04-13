@@ -3,16 +3,6 @@
     <h3 class="title">
         {{title}}
     </h3>
-    <!-- <iframe class="movie"
-        :src="moviePath"
-        :title="title"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-    >
-    </iframe> -->
-    <!-- allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" -->
-    <!-- ▶ -->
     <iframe class="movie"
       :src="moviePath"
       :srcdoc="srcdoc"
@@ -30,11 +20,14 @@ export default {
   name: 'MovieBlock',
   props: {
     title: String,
-    moviePath: String
+    movieId: String
   },
   data () {
     return {
       srcdoc: {
+        type: String
+      },
+      moviePath: {
         type: String
       }
     }
@@ -53,6 +46,9 @@ export default {
       return imgPath
     },
     createSrcdoc () {
+      console.log(this.moviePath)
+      this.moviePath = 'https://www.youtube.com/embed/' + this.movieId
+      console.log(this.moviePath)
       this.moviePath.concat('?autoplay=1')
       this.srcdoc = `
         <style>*{padding:0;margin:0;overflow:hidden;}

@@ -1,7 +1,6 @@
 <template>
   <app-header />
   <router-view v-slot="{Component}">
-    <!-- <transition name="fade" mode="out-in"> -->
     <transition name="increase">
       <component :is="Component" :key="$route.path"></component>
     </transition>
@@ -10,7 +9,6 @@
 </template>
 
 <script>
-// import Home from './views/Home.vue'
 import AppHeader from './components/AppHeader.vue'
 import AppFooter from './components/Footer.vue'
 
